@@ -4,6 +4,10 @@ abstract class Account {
      private String owner;
     private BigDecimal balance;
 
+    private  AccountType account;
+
+    public BigDecimal Overdraft = BigDecimal.valueOf(0);
+
     public String getOwner() {
         return owner;
     }
@@ -12,9 +16,10 @@ abstract class Account {
         this.owner = owner;
     }
 
-    public Account(String owner, BigDecimal balance) {
+    public Account(String owner, BigDecimal balance , AccountType acc ) {
         this.owner = owner;
         this.balance = balance;
+        this.account = acc;
     }
 
     public void deposit(BigDecimal amount){
@@ -46,5 +51,10 @@ abstract class Account {
 
     public int checkvalue(BigDecimal amount){
         return this.balance.compareTo(amount);
+    }
+
+    public void setOverdraft(BigDecimal amount){
+        this.Overdraft =  amount;
+        System.out.println(this.Overdraft);
     }
 }

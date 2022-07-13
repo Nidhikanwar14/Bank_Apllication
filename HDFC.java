@@ -1,8 +1,8 @@
 import java.math.BigDecimal;
 
 public class HDFC extends Account implements BankAccount {
-    public HDFC(String owner, BigDecimal balance) {
-        super(owner, balance);
+    public HDFC(String owner, BigDecimal balance ,AccountType acc) {
+        super(owner, balance ,acc);
     }
 
     @Override
@@ -14,5 +14,10 @@ public class HDFC extends Account implements BankAccount {
     @Override
     public void withdraw(BigDecimal amount) throws InsufficientAmount{
         super.withdraw(amount);
+    }
+
+    @Override
+    public void setvalue() {
+
     }
 }
