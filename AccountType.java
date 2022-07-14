@@ -5,9 +5,6 @@ public enum AccountType {
     public String value;
 
     AccountType(String current_account) {
-    }
-
-    public void setValue(String value) {
         this.value = value;
     }
 }

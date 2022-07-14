@@ -4,6 +4,5 @@ public interface BankAccount {
     public void deposit(BigDecimal amount);
     public void withdraw(BigDecimal amount) throws InsufficientAmount;
 
-    public void setvalue();
-
+    public boolean checkvalue(BigDecimal amount);
 }
