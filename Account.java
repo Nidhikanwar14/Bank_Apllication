@@ -36,21 +36,29 @@ abstract class Account {
 
     public void deposit(BigDecimal amount){
         this.balance = this.balance.add(amount);
-        System.out.println("Deposited " +amount+ " to " +this.owner+ " and total balance of "+this.owner+ " is "+this.getBalance()+".");
+        System.out.println(" Deposited " +amount+ " to " +this.owner+ " and total balance of "+this.owner+ " is "+this.getBalance()+".");
     }
 
 
     public void withdraw(BigDecimal amount) throws InsufficientAmount {
-            try {
-                if(this.balance.compareTo(amount) >= 0){
-                    this.balance = this.balance.subtract(amount);}
-                else{
-                throw new InsufficientAmount("Insufficient balance!");}
-//                System.out.println("Insufficient balance!");
-            } catch (InsufficientAmount e) {
-               e.getMessage();
-//               throw new InsufficientAmount("Insufficient balance!");
-            }
+        if(this.balance.compareTo(amount) >= 0){
+                    this.balance = this.balance.subtract(amount);
+                    System.out.println(this.getOwner()+" Withdraw " +amount+ " from total balance.");
+        }
+
+        else {
+            System.out.println("Insufficient balance!");
+        }
+//            try {
+//                if(this.balance.compareTo(amount) >= 0){
+//                    this.balance = this.balance.subtract(amount);}
+//                else{
+//                throw new InsufficientAmount("Insufficient balance!");}
+////                System.out.println("Insufficient balance!");
+//            } catch (InsufficientAmount e) {
+//               e.getMessage();
+////               throw new InsufficientAmount("Insufficient balance!");
+//            }
         }
 
 
@@ -64,10 +72,10 @@ abstract class Account {
     }
 //   @Override
     public boolean checkvalue(BigDecimal amount){
-        if(this.account== AccountType.SAVING){
-            BigDecimal temp = this.balance.add(this.Overdraft);
-            return temp.compareTo(amount) >= 0;
-        }
+//        if(this.account== AccountType.SAVING){
+//            BigDecimal temp = this.balance.add(this.Overdraft);
+//            return temp.compareTo(amount) >= 0;
+//        }
         boolean value = this.balance.compareTo(amount) >= 0;
         return value;
     }

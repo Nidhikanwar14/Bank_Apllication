@@ -17,7 +17,7 @@ public class ICICI extends Account implements BankAccount {
     @Override
     public void withdraw(BigDecimal amount) throws InsufficientAmount  {
         super.withdraw(amount);
-        System.out.println(this.getOwner()+" Withdraw " +amount+ " from total balance.");
+//        System.out.println(this.getOwner()+" Withdraw " +amount+ " from total balance.");
 
     }
 
